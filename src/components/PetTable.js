@@ -20,7 +20,7 @@ const PetTable = () => {
   useEffect(() => {
     const userId = localStorage.getItem("userId");
     axios
-      .get("http://localhost:4000/get_passwords", {
+      .get("https://mapache-server-1.onrender.com/get_passwords", {
         headers: { userId },
       })
       .then((response) => setPets(response.data))
@@ -56,7 +56,7 @@ const handleAddPet = async () => {
     console.log("Enviando datos al servidor:", petToSend);
 
    try{
-    const response = await fetch('http://localhost:4000/post_pets', {
+    const response = await fetch('https://mapache-server-1.onrender.com/post_pets', {
       method: 'POST', 
       headers: {
         'Content-Type': 'application/json'
@@ -76,7 +76,7 @@ const handleAddPet = async () => {
      setShowModal(false); // Cierra el modal
      setNewPet({ nombre: '', tipo: '', edad: '', descripcion: '' });
 
-     await fetch('http://localhost:4000/sendNotification', {
+     await fetch('https://mapache-server-1.onrender.com/sendNotification', {
       method: 'POST', 
       headers: {
         'Content-Type': 'application/json',
@@ -179,7 +179,7 @@ const handleAddPet = async () => {
           };
   
           // Enviar la suscripción a la API
-          const response = await fetch('http://localhost:4000/suscription', {
+          const response = await fetch('https://mapache-server-1.onrender.com/suscription', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'

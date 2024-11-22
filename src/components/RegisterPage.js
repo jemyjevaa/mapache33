@@ -20,7 +20,7 @@ const RegisterPage = () => {
 
     try {
       // Realiza la solicitud Post
-      const response = await fetch("http://localhost:4000/register", {
+      const response = await fetch("https://mapache-server-1.onrender.com/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

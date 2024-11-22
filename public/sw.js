@@ -96,7 +96,7 @@ function syncPets() {
 
                 // Enviar cada tarea al backend
                 const promises = pets.map(pet => {
-                    return fetch('http://localhost:4000/post_pets', {
+                    return fetch('https://mapache-server-1.onrender.com/post_pets', {
                         method: 'POST', 
                         headers : {
                             'Content-Type': 'application/json'
